@@ -18,6 +18,10 @@
            |-- 时序图
                  
 
-总结Mybatis设计模式
-1.构造器模式：MappedStatement.Builder,构造器内部类
-2.
+总结Mybatis设计模式<br/>
+1.工厂模式：DefaultSqlSessionFactory。<br/>
+2.构造器模式：MappedStatement.Builder,构造器内部类。<br/>
+3.模板方法模式：BaseExecutor的doUpdate抽象方法，交由子类实现。<br/>
+4.装饰器模式：CachingExecutor装饰SimpleExecutor增加缓存功能。<br/>
+5.动态代理模式：MapperProxy代理Mapper接口。<br/>
+6.委派模式：RoutingStatementHandler，根据语句类型，委派到不同的语句处理器(STATEMENT | PREPARED | CALLABLE)。<br/>
